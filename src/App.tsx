@@ -5,7 +5,6 @@ import { tags } from "./tags.mock-data";
 
 function App() {
   const options: TagCloudOptions = {
-    minFontSize: 12,
     maxFontSize: 48,
   };
 

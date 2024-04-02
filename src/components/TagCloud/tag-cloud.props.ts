@@ -6,8 +6,9 @@ type TagCloudProps = {
 };
 
 export class TagCloudOptions {
-  minFontSize: number = 12;
-  maxFontSize: number = 36;
+  minFontSize?: number = 12;
+  maxFontSize?: number = 36;
+  linkTarget?: string = "_blank";
 }
 
 export default TagCloudProps;

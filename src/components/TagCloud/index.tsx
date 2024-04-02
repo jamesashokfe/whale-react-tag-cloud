@@ -1,9 +1,15 @@
 import TagProps from "../Tag/tag.props";
-import TagCloudProps from "./tag-cloud.props";
+import TagCloudProps, { TagCloudOptions } from "./tag-cloud.props";
 import "./tag-cloud.css";
 
 function TagCloud({ tags, options }: TagCloudProps) {
-  const { minFontSize, maxFontSize } = options;
+  const defaultOptions = new TagCloudOptions();
+  // Override available custom options on default options.
+  const tagCloudOptions = { ...defaultOptions, ...options };
+  const { minFontSize, maxFontSize } = tagCloudOptions as {
+    minFontSize: number;
+    maxFontSize: number;
+  };
 
   const sortTagsByWeight = (tags: TagProps[]) => {
     tags.sort((a, b) => {
