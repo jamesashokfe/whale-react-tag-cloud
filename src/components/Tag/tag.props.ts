@@ -4,6 +4,7 @@ type TagProps = {
   weight?: number,
   color?: string,
   fontSize?: number,
+  linkTarget?: string,
 };
 
 export default TagProps;
