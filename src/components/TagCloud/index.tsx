@@ -44,7 +44,10 @@ function TagCloud({ tags, options }: TagCloudProps) {
       <ul className="tag-cloud">
         {tags.map((value) => {
           return (
-            <li className="tag-cloud__item">
+            <li
+              className="tag-cloud__item"
+              key={`${value.text}-${value.link}-${value.weight}-${value.color}`}
+            >
               <Tag {...value} linkTarget={linkTarget} />
             </li>
           );
