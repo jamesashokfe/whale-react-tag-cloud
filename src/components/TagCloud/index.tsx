@@ -1,14 +1,16 @@
 import TagProps from "../Tag/tag.props";
 import TagCloudProps, { TagCloudOptions } from "./tag-cloud.props";
 import "./tag-cloud.css";
+import Tag from "../Tag";
 
 function TagCloud({ tags, options }: TagCloudProps) {
   const defaultOptions = new TagCloudOptions();
   // Override available custom options on default options.
   const tagCloudOptions = { ...defaultOptions, ...options };
-  const { minFontSize, maxFontSize } = tagCloudOptions as {
+  const { minFontSize, maxFontSize, linkTarget } = tagCloudOptions as {
     minFontSize: number;
     maxFontSize: number;
+    linkTarget: string;
   };
 
   const sortTagsByWeight = (tags: TagProps[]) => {
@@ -37,8 +39,20 @@ function TagCloud({ tags, options }: TagCloudProps) {
   if (tags && tags.length > 0) {
     sortTagsByWeight(tags);
     assignFontSizes(tags);
+
+    return (
+      <ul className="tag-cloud">
+        {tags.map((value) => {
+          return (
+            <li className="tag-cloud__item">
+              <Tag {...value} linkTarget={linkTarget} />
+            </li>
+          );
+        })}
+      </ul>
+    );
   }
-  return <div>Hello World!</div>;
+  return <p className="tag-cloud">No tags provided.</p>;
 }
 
 export default TagCloud;
