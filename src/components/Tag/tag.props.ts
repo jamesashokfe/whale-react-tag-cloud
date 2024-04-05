@@ -3,6 +3,7 @@ type TagProps = {
   link?: string,
   weight?: number,
   color?: string,
+  customClass?: string,
   fontSize?: number,
   linkTarget?: string,
 };

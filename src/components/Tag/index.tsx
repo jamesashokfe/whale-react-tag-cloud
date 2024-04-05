@@ -1,26 +1,36 @@
 import "./tag.css";
 import TagProps from "./tag.props";
 
-function Tag({ text, link, color, fontSize, linkTarget }: TagProps) {
-  const styles: { color?: string; fontSize?: string } = {};
-  color && (styles.color = color);
-  fontSize && (styles.fontSize = `${fontSize}em`);
+function Tag({
+  text,
+  link,
+  color,
+  fontSize,
+  linkTarget,
+  customClass,
+}: TagProps) {
+  const style: { color?: string; fontSize?: string } = {};
+  color && (style.color = color);
+  fontSize && (style.fontSize = `${fontSize}em`);
 
-  const tagElement = link ? (
-    <a
-      className="tag__text tag__text--link"
-      href={link}
-      style={styles}
-      target={linkTarget}
-    >
+  let className = "tag";
+  if (link) {
+    className += " tag--link";
+  }
+  if (customClass) {
+    className += ` ${customClass}`;
+  }
+
+  // Common attributes for text/link tags.
+  const attributes = { style, className };
+
+  return link ? (
+    <a href={link} target={linkTarget} {...attributes}>
       {text}
     </a>
   ) : (
-    <span className="tag__text" style={styles}>
-      {text}
-    </span>
+    <span {...attributes}>{text}</span>
   );
-  return <div className="tag">{tagElement}</div>;
 }
 
 export default Tag;
