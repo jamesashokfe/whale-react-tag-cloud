@@ -1,7 +1,8 @@
+import { memo } from "react";
 import TagProps from "./tag.props";
 import "./tag.css";
 
-function Tag({
+const Tag = memo(function Tag({
   text,
   link,
   color,
@@ -32,6 +33,6 @@ function Tag({
   ) : (
     <span {...attributes}>{text}</span>
   );
-}
+});
 
 export default Tag;
