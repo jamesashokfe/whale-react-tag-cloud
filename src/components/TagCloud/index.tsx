@@ -1,7 +1,7 @@
+import Tag from "../Tag";
 import TagProps from "../Tag/tag.props";
 import TagCloudProps, { TagCloudOptions } from "./tag-cloud.props";
 import "./tag-cloud.css";
-import Tag from "../Tag";
 
 function TagCloud({ tags, options }: TagCloudProps) {
   const defaultOptions = new TagCloudOptions();

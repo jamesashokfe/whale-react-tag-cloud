@@ -1,5 +1,5 @@
-import "./tag.css";
 import TagProps from "./tag.props";
+import "./tag.css";
 
 function Tag({
   text,
@@ -9,6 +9,7 @@ function Tag({
   linkTarget,
   customClass,
 }: TagProps) {
+  // Tag styles from user input.
   const style: { color?: string; fontSize?: string } = {};
   color && (style.color = color);
   fontSize && (style.fontSize = `${fontSize}em`);
