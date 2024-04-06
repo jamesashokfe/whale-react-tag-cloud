@@ -1,0 +1,17 @@
+.tag-cloud {
+  font-size: 16px; /* Default font size. Each tag will be relative to this value based on its weight. */
+
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: auto;
+}
+
+.tag-cloud__item {
+}
