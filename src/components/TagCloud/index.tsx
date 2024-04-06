@@ -31,16 +31,30 @@ const TagCloud = memo(function TagCloud({ tags, options }: TagCloudProps) {
     });
   };
 
+  // Randomise positioning and alignment of each tag.
+  const getStyle = () => {
+    const randomNumber = Math.floor(Math.random() * 100);
+    const alignSelfList = ["start", "center", "end"];
+
+    return {
+      order: randomNumber,
+      alignSelf: alignSelfList[randomNumber % alignSelfList.length],
+    };
+  };
+
   if (tags && tags.length > 0) {
     assignFontSizes(tags);
 
     return (
       <ul className="tag-cloud">
         {tags.map((value) => {
+          const style = getStyle();
+
           return (
             <li
               className="tag-cloud__item"
               key={`${value.text}-${value.link}-${value.weight}-${value.color}`}
+              style={style}
             >
               <Tag {...value} linkTarget={linkTarget} />
             </li>
