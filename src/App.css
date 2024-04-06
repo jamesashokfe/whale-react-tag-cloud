@@ -1,0 +1,26 @@
+.app__title {
+  text-align: left;
+}
+
+.demo {
+  margin-bottom: 2rem;
+}
+
+.demo__title {
+  color: #333;
+  text-align: left;
+}
+
+.demo__container {
+  border: 1px solid #333;
+}
+
+.demo__container--1 {
+  width: 1000px;
+  height: 600px;
+}
+
+.demo__container--2 {
+  width: 400px;
+  height: 400px;
+}
