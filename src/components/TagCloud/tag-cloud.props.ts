@@ -2,7 +2,7 @@ import TagProps from "../Tag/tag.props";
 
 type TagCloudProps = {
   tags: TagProps[],
-  options: TagCloudOptions,
+  options?: TagCloudOptions,
 };
 
 export class TagCloudOptions {
