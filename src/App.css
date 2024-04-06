@@ -21,20 +21,24 @@
 
 .demo__container {
   border: 1px solid #333;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .demo__container--1 {
   width: 64rem;
   height: 40rem;
-  max-width: 100%;
-  max-height: 100%;
   padding: 2rem;
 }
 
 .demo__container--2 {
   width: 25rem;
   height: 25rem;
-  max-width: 100%;
-  max-height: 100%;
+  padding: 1rem;
+}
+
+.demo__container--3 {
+  width: 32rem;
+  height: 24rem;
   padding: 1rem;
 }

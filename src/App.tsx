@@ -28,6 +28,13 @@ function App() {
           <TagCloud tags={tags} options={optionsDemo2} />
         </div>
       </div>
+
+      <div className="demo">
+        <h2 className="demo__title">Demo 3 - No data</h2>
+        <div className="demo__container demo__container--3">
+          <TagCloud tags={[]} />
+        </div>
+      </div>
     </>
   );
 }
