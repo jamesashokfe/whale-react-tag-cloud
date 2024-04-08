@@ -15,4 +15,17 @@
 }
 
 .tag-cloud__item {
+  transition: 0.1s;
+}
+
+.tag-cloud--hover-zoom .tag {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.tag-cloud--hover-zoom .tag-cloud__item:hover {
+  transform: scale(1.2);
+}
+
+.tag-cloud--hover-fluid:hover .tag-cloud__item:hover {
+  font-weight: bold;
 }
