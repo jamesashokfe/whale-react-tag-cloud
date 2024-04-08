@@ -9,6 +9,7 @@ function App() {
   };
   const optionsDemo2: TagCloudOptions = {
     maxFontSize: 24,
+    hoverEffect: "fluid",
   };
 
   return (

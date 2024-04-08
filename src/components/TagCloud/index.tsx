@@ -8,10 +8,11 @@ const TagCloud = memo(function TagCloud({ tags, options }: TagCloudProps) {
   // Override available custom options on default options.
   const defaultOptions = new TagCloudOptions();
   const tagCloudOptions = { ...defaultOptions, ...options };
-  const { minFontSize, maxFontSize, linkTarget } = tagCloudOptions as {
+  const { minFontSize, maxFontSize, linkTarget, hoverEffect } = tagCloudOptions as {
     minFontSize: number;
     maxFontSize: number;
     linkTarget: string;
+    hoverEffect?: string;
   };
 
   // Calculate font size relative to tag weights.
@@ -45,8 +46,13 @@ const TagCloud = memo(function TagCloud({ tags, options }: TagCloudProps) {
   if (tags && tags.length > 0) {
     assignFontSizes(tags);
 
+    let classTagCloud = "tag-cloud";
+    if (hoverEffect) {
+      classTagCloud += ` ${classTagCloud}--hover-${hoverEffect}`;
+    }
+
     return (
-      <ul className="tag-cloud">
+      <ul className={classTagCloud}>
         {tags.map((value) => {
           const style = getStyle();
 
