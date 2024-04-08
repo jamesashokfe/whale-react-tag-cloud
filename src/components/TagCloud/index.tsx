@@ -8,12 +8,13 @@ const TagCloud = memo(function TagCloud({ tags, options }: TagCloudProps) {
   // Override available custom options on default options.
   const defaultOptions = new TagCloudOptions();
   const tagCloudOptions = { ...defaultOptions, ...options };
-  const { minFontSize, maxFontSize, linkTarget, hoverEffect } = tagCloudOptions as {
-    minFontSize: number;
-    maxFontSize: number;
-    linkTarget: string;
-    hoverEffect?: string;
-  };
+  const { minFontSize, maxFontSize, linkTarget, hoverEffect } =
+    tagCloudOptions as {
+      minFontSize: number;
+      maxFontSize: number;
+      linkTarget: string;
+      hoverEffect?: string;
+    };
 
   // Calculate font size relative to tag weights.
   const calculateFontSize = (weight: number, maxWeight: number) => {
@@ -27,7 +28,7 @@ const TagCloud = memo(function TagCloud({ tags, options }: TagCloudProps) {
       // Compute relative font sizes in `em` based on tag weights.
       value.fontSize =
         value.weight || value.weight === 0
-          ? (value.fontSize = calculateFontSize(value.weight, maxWeight) / 16)
+          ? calculateFontSize(value.weight, maxWeight) / 16
           : 1;
     });
   };

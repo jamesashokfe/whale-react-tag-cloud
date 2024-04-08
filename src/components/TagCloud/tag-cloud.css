@@ -27,5 +27,11 @@
 }
 
 .tag-cloud--hover-fluid:hover .tag-cloud__item:hover {
+  /* 
+   * Hovered tag is bold which increases its width,
+   * causing adjoining tags to displace.
+   * With transition property, this gives a fluid effect.
+   * Additionally, bold weight shows prominence of the hovered tag.
+   */
   font-weight: bold;
 }
